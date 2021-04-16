@@ -1,0 +1,20 @@
+<!-- <h4>
+    Courses List
+</h4>
+<ul class="list-group">
+    <li  *ngFor="let product of products"
+    class="p-1 mt-1 list-group-item"
+    >
+{{product?.Name}}
+    </li> 
+  </ul> -->
+  <div class="container">
+      <div class="row">
+        <app-product-item
+        *ngFor="let product of products"
+        [product]="product"
+      ></app-product-item>
+      
+      </div>
+  </div>
+    
