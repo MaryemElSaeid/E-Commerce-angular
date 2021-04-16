@@ -1,0 +1,42 @@
+<div *ngIf="product; else loadingTemplate">
+    
+  
+    <h3> {{ product.Name}}</h3>
+  
+    <p>{{ product.Description }}</p>
+  
+    <div>
+        <img class="img-fluid" [src]="product.ProductPicUrl">
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+        {{product.Status}}
+    </div>
+    <div class="card-body">
+      <h1 class="card-title">{{product.Price}}$</h1>
+      <form  [formGroup]="productForm" (ngSubmit)="onSubmit(productForm)">
+      <div class="form-group">
+        <label >Quantity:</label>
+        <input  formControlName="quantity" class="form-control" [placeholder]="product.Quantity">
+      </div> 
+    
+      <!-- <a [routerLink]="['']" class="btn btn-primary">Add To Cart</a> -->
+      <button
+      [routerLink]="['']"
+      class="btn"
+      [ngClass]="{
+        'btn-outline-success': productForm.valid,
+        'btn-outline-default': productForm.invalid
+      }"
+      type="submit"
+      [disabled]="productForm.invalid"
+    >
+    Add To Cart
+    </button>
+      </form>
+    </div>
+  </div>
+  
+  <ng-template #loadingTemplate> Loading... </ng-template>

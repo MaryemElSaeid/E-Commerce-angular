@@ -9,6 +9,10 @@ import { AboutComponent } from './about/about.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductsListComponent } from './home/products-list/products-list.component';
+import { ProductItemComponent } from './home/product-item/product-item.component';
+import { ProductDetailsComponent } from './home/product-details/product-details.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +20,18 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     HomeComponent,
     AboutComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    ProductsListComponent,
+    ProductItemComponent,
+    ProductDetailsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
