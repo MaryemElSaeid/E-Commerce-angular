@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="class container" style="margin:40px">
     <div *ngIf="product; else loadingTemplate">
 
@@ -27,13 +28,69 @@
         'btn-outline-success': productForm.valid,
         'btn-outline-default': productForm.invalid
       }" type="submit" [disabled]="productForm.invalid" (click)="onSubmit($event)">
+=======
+<div class="container">
+  <div class="row">
+    <div *ngIf="product; else loadingTemplate">
+<div class="col-md-6 mt-3">
+ 
+    <div>
+  
+    <h3> {{ product.Name}}</h3>
+  
+    <p>{{ product.Description }}</p>
+  
+    <div>
+        <img class="img-fluid" [src]="product.ProductPicUrl">
+    </div>
+  
+
+</div>
+ <div class="col-md-2"> 
+
+ </div>
+
+<div  class="col-md-4 mt-3">
+  <div class="card" >
+    <div class="card-header">
+        {{product.Status}}
+    </div>
+    <div class="card-body">
+      <h1 class="card-title"><span class="text-danger">{{product.Price}}$</span></h1>
+      <form  [formGroup]="productForm" (ngSubmit)="onSubmit(productForm)">
+      <div class="form-group">
+        <label >Quantity:</label>
+        <input  type="number"  formControlName="quantity" class="form-control" [placeholder]="product.Quantity">
+      </div> 
+    
+      <!-- <a [routerLink]="['']" class="btn btn-primary">Add To Cart</a> -->
+      <button
+
+      class="btn"
+      [ngClass]="{
+        'btn-outline-success': productForm.valid,
+        'btn-outline-default': productForm.invalid
+      }"
+      type="submit"
+      [disabled]="productForm.invalid">
+>>>>>>> 6de0cb328fd0c9f3dce2a4090517ed6702a2f8e6
     Add To Cart
     </button>
                 </form>
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 
     <ng-template #loadingTemplate> Loading... </ng-template>
 
 </div>
+=======
+  </div>
+</div>
+</div>
+  
+</div>
+</div>
+<ng-template #loadingTemplate> Loading... </ng-template>
+>>>>>>> 6de0cb328fd0c9f3dce2a4090517ed6702a2f8e6

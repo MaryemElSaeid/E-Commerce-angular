@@ -7,10 +7,14 @@ import { Product } from '../home/models/product.model';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-
+  allproducts=JSON.parse(localStorage.getItem('items'));
+  
   constructor() { }
+   
+   
 
   ngOnInit(): void {
+    console.log(this.allproducts)
   }
 
   
