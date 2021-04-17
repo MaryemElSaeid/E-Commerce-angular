@@ -8,13 +8,34 @@
 {{product?.Name}}
     </li> 
   </ul> -->
-  <div class="container">
-      <div class="row">
-        <app-product-item
-        *ngFor="let product of products"
-        [product]="product"
-      ></app-product-item>
-      
-      </div>
-  </div>
-    
+
+
+
+
+
+
+<div class="container" style="margin: 40px; margin-left: 350px;">
+    <div class="row">
+        <app-product-item *ngFor="let product of pagedItems" [product]="product"></app-product-item>
+
+    </div>
+</div>
+
+<div class="container" style="margin-left: 420px; margin-top: 200px;">
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <button class="btn btn-primary" (click)="setPage(pager.currentPage - 1)">Previous</button>
+        </li>
+        &nbsp;
+        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            &nbsp;
+            <button class="btn btn-primary" (click)="setPage(page)">{{page}}</button> &nbsp;
+        </li>
+        &nbsp;
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <button class="btn btn-primary" (click)="setPage(pager.currentPage + 1)">Next</button>
+        </li>
+
+    </ul>
+</div>

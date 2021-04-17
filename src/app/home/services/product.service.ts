@@ -15,4 +15,7 @@ export class ProductService {
   getProductById(id) {
     return this._http.get(`${environment.baseUrl2}/${id}`);
   }
+
+ 
+  
 }

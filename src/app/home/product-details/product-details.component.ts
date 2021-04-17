@@ -19,9 +19,20 @@ export class ProductDetailsComponent implements OnInit , OnDestroy {
     quantity: ['', Validators.required ],
     
   });
+
+  
   constructor( private _fb: FormBuilder,private _route: ActivatedRoute,private _productsService: ProductService) { }
   onSubmit(form: FormGroup) {
-      console.log(form)
+     
+    this._routeParamsSub = this._route.paramMap.subscribe(paramMap => {
+      if (paramMap.has('id')) {
+        this._productsService.getProductById(paramMap.get('id')).subscribe((res: any) => {
+          this.product = res.data;
+          //console.log(this.product)
+        });
+      }
+    });
+     
   }
 
 
@@ -30,6 +41,7 @@ export class ProductDetailsComponent implements OnInit , OnDestroy {
       if (paramMap.has('id')) {
         this._productsService.getProductById(paramMap.get('id')).subscribe((res: any) => {
           this.product = res.data;
+          //console.log(this.product);
         });
       }
     });

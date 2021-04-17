@@ -13,6 +13,8 @@ import { ProductsListComponent } from './home/products-list/products-list.compon
 import { ProductItemComponent } from './home/product-item/product-item.component';
 import { ProductDetailsComponent } from './home/product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
+import { PagerService } from './home/products-list/services';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { CartComponent } from './cart/cart.component';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    PagerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
