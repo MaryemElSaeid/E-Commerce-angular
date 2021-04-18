@@ -14,6 +14,7 @@ import { ProductItemComponent } from './home/product-item/product-item.component
 import { ProductDetailsComponent } from './home/product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 import { PagerService } from './home/products-list/services';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { PagerService } from './home/products-list/services';
     ProductsListComponent,
     ProductItemComponent,
     ProductDetailsComponent,
-    CartComponent
+    CartComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
