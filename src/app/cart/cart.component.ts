@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../home/models/product.model';
 
 @Component({
   selector: 'app-cart',
@@ -8,15 +7,15 @@ import { Product } from '../home/models/product.model';
 })
 export class CartComponent implements OnInit {
   allproducts=JSON.parse(localStorage.getItem('items'));
-  
+
   constructor() { }
-   
-   
+
+
 
   ngOnInit(): void {
     console.log(this.allproducts)
   }
 
-  
-  
+
+
 }

@@ -1,27 +1,21 @@
-<<<<<<< HEAD
-=======
-
-    
-  
-  <table class="table">
+<table class="table">
     <thead class="thead-light">
-      <tr>
-        <th scope="col">Image</th>
-        <th scope="col">Name</th>
-        <th scope="col">Price</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">TotalPrice</th>
-      </tr>
+        <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">TotalPrice</th>
+        </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of allproducts">
-        
-        <td><img  [src]="item.proimg" style="width: 50px;height: 50px;"/></td>
-        <td>{{item.proname}}</td>
-        <td>{{item.proprice}}$</td>
-        <td>{{item.proquantity.quantity}}</td>
-        <td>{{item.prototal}}$</td>
-      </tr>
+        <tr *ngFor="let item of allproducts">
+
+            <td><img [src]="item.proimg" style="width: 50px;height: 50px;" alt="image" /></td>
+            <td>{{item.proname}}</td>
+            <td>{{item.proprice}}$</td>
+            <td>{{item.proquantity.quantity}}</td>
+            <td>{{item.prototal}}$</td>
+        </tr>
     </tbody>
-  </table>
->>>>>>> 6de0cb328fd0c9f3dce2a4090517ed6702a2f8e6
+</table>
