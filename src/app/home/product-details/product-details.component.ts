@@ -24,10 +24,11 @@ export class ProductDetailsComponent implements OnInit , OnDestroy {
     quantity: ['',Validators.required],
     
   });
-<<<<<<< HEAD
+
 
   
-  constructor( private _fb: FormBuilder,private _route: ActivatedRoute,private _productsService: ProductService) { }
+  constructor( private _fb: FormBuilder,private _route: ActivatedRoute,private _productsService: ProductService,    private _router: Router
+    ) { }
   onSubmit(form: FormGroup) {
      
     this._routeParamsSub = this._route.paramMap.subscribe(paramMap => {
@@ -39,16 +40,9 @@ export class ProductDetailsComponent implements OnInit , OnDestroy {
       }
     });
      
-=======
+
   
-  constructor( 
-    private _fb: FormBuilder,
-    private _route: ActivatedRoute,
-    private _productsService: ProductService,
-        private _router: Router
-    ) { }
-  onSubmit(form: FormGroup) {
-  
+
     if (form.valid) {
       const productQuantity = form.value;
        const name=this.product.Name;
@@ -83,9 +77,7 @@ export class ProductDetailsComponent implements OnInit , OnDestroy {
     }
     
   
->>>>>>> 6de0cb328fd0c9f3dce2a4090517ed6702a2f8e6
   }
-
 
   ngOnInit(): void {
     this._routeParamsSub = this._route.paramMap.subscribe(paramMap => {
