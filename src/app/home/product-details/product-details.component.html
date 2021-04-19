@@ -29,7 +29,7 @@
                             <form [formGroup]="productForm" (ngSubmit)="onSubmit(productForm)">
                                 <div class="form-group">
                                     <label>Quantity:</label>
-                                    <input type="number" formControlName="quantity" class="form-control" [placeholder]="product.Quantity">
+                                    <input type="number" formControlName="quantity" class="form-control" [placeholder]="product.Quantity" min="1" [max]="product.Quantity">
                                 </div>
 
                                 <!-- <a [routerLink]="['']" class="btn btn-primary">Add To Cart</a> -->
