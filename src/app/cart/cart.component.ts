@@ -7,13 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
   allproducts=JSON.parse(localStorage.getItem('items'));
+  cartTotal : number=0;
 
   constructor() { }
 
 
 
   ngOnInit(): void {
-    console.log(this.allproducts)
+    
+    //console.log(this.allproducts);
+    for (var i=0;i<this.allproducts.length;i++){
+      this.cartTotal += this.allproducts[i].prototal
+    
+    }
+    console.log(this.cartTotal);
   }
 
 
